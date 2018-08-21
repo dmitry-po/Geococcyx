@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Updating...</title>
+<style>
+    body {
+        background-color: #e8e8e8;
+    }
+    div {
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 5px;
+
+    }
+    .done {
+    border-left: 6px solid #1ba38e
+    }
+    .active {
+    border-left: 6px solid #fca124
+    }
+    .future {
+    border-left: 6px solid #dc4a4a
+    }
+    ul {
+    }
+    li {
+    cursor: pointer;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 100px;
+        background-color: rgba(0,0,0,0.4)
+    }
+    .modal-content {
+        border: 1px sold black;
+        width: 80%;
+        margin: auto;
+    }
+    .close {
+    float: right;
+    }
+    .close:hover {
+    cursor: pointer;
+    }
+</style>
+<script>
+function open_modal(modal_id) {
+    document.getElementById(modal_id).style.display="block";
+}
+
+function close_modals() {
+    var modals = document.getElementsByClassName('modal');
+    for (var i = 0; i < modals.length; i++) {
+        modals[i].style.display = "none";
+    }
+}
+
+function show_element(element_id) {
+    var selected_element = document.getElementById(element_id);
+    if (selected_element.style.display == "block") {
+        selected_element.style.display = "none";
+    }
+    else {
+        selected_element.style.display = "block";
+    }
+}
+</script>
+
+</head>
+    <body>
+        <h3>Done</h3>
+        <div class="done">
+            <h4 onclick="show_element('task_001')">v0.1</h4>
+            <ul id="task_001">
+                <li type="disc" onclick="open_modal('modal_1')">Изменение дизайна;</li>
+                <div id="modal_1" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="close_modals()">&times;</span>
+                        <p><b>Изменение дизайна</b></p>
+                        <p>Визуальное разделение области фильтров и графиков</p>
+                    </div>
+                </div>
+                <li type="disc" onclick="open_modal('modal_2')">Добавление расчета метрик;</li>
+                <div id="modal_2" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="close_modals()">&times;</span>
+                        <p><b>Добавление расчета метрик</b></p>
+                        <p>Визуальное разделение области фильтров и графиков</p>
+                    </div>
+                </div>
+                <li type="disc">"Погружение" вглубь иерархии розничных продуктов;</li>
+                <li type="disc">Конструктор представления тепловой карты.</li>
+            </ul>
+        </div>
+        <div class="done">
+            <h4>v0.2</h4>
+            <ul>
+                <li type="disc">Добавление таблицы с данными;</li>
+                <li type="disc">Выгрузка данных в Excel;</li>
+                <li type="disc">Разделение таблицы и графиков на разные вкладки.</li>
+            </ul>
+        </div>
+        <h3>In progress</h3>
+        <div class="active">
+            <h4>v0.3</h4>
+            <ul>
+                <li type="circle">Множественный выбор в фильтрах;</li>
+                <li type="circle">Добавление новой прогнозной модели;</li>
+                <li type="circle">Сравнение прогнозных моделей.</li>
+            </ul>
+        </div>
+        <h3>Future ideas</h3>
+        <div class="future">
+            <h4>v0.inf</h4>
+            <ul>
+                <li type="circle">Больше моделей!</li>
+            </ul>
+        </div>
+    </body>
+</html>
