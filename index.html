@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Mr. Po's simple task tracker</title>
+        <link rel="stylesheet" href="styles.css">
+        <script type='text/javascript' src='data/tasks.js'></script> <!-- for TESTING purposes only -->
+        <script type='text/javascript' src='app.js'></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="side-menu">
+            <div class="menu-toggle">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="big-container">
+            <h1>TODOs</h1>
+            <div id="now" class='task-group'>
+                <h2>Now</h2>
+                <div class="task-container">
+                    <div class="task-add">
+                        <button class="add-task-button">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="today" class='task-group'>
+                <h2>Today</h2>
+                <div class="task-container">
+                    <div class="task-add">
+                        <button class="add-task-button">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="tomorrow" class='task-group'>
+                <h2>Tomorrow</h2>
+                <div class="task-container">
+                    <div class="task-add">
+                        <button class="add-task-button">+</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Template -->
+            <div id="today-tasks" class='task-group'>
+                <h2></h2>
+                <div id="task-container">
+                    <template id="task-template">
+                        <div class="task" style="border-left: 6px solid #dc4a4a">
+                            <span class="task-header">Azure</span>
+                            <p class='task-description'>Завершить курс по Azure DS Essentials</p>
+                        </div>
+                    </template>
+                </div>
+                <script type='text/javascript'>
+                    add_element('#task-container', 'task-template', my_tasks);
+                </script>
+            </div>
+            <!-- Template -->
+        </div>
+    
+    </body>
+</html>
